@@ -32,17 +32,17 @@ export default function App3() {
 
   return (
     <div className="canvasContainer">
-      <Suspense>
-        <Canvas
-          shadows
-          dpr={[1, 2]}
-          camera={{ near: 0.025 }}
-          gl={{
-            alpha: true,
-            powerPreference: 'high-performance',
-            antialias: true,
-          }}
-        >
+      <Canvas
+        shadows
+        dpr={[1, 2]}
+        camera={{ near: 0.025 }}
+        gl={{
+          alpha: true,
+          powerPreference: 'high-performance',
+          antialias: true,
+        }}
+      >
+        <Suspense>
           <OrbitControls autoRotate />
           <Environment files="./environment/apartment.hdr" background />
 
@@ -51,15 +51,15 @@ export default function App3() {
             position={[0, -2, 0]}
           >
             <Model
-              url={Models[Models.findIndex((m) => m.title === title)].url}
+              url={Models[Models.findIndex((m) => m.title === title)]?.url}
             />
           </group>
 
           {/*-- Помощники --*/}
           <Stats />
           <axesHelper args={[5]} />
-        </Canvas>
-      </Suspense>
+        </Suspense>
+      </Canvas>
     </div>
   );
 }

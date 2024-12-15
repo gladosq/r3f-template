@@ -29,5 +29,10 @@
     "eslint-config-next": "15.1.0",
     "sass": "^1.83.0",
     "typescript": "5.6.3"
+  },
+  "overrides": {
+    "leva": {
+      "@radix-ui/react-portal": "1.0.2"
+    }
   }
 }

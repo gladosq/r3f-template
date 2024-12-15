@@ -4,7 +4,7 @@ import CanvasPreloader from "@/components/CanvasPreloader/CanvasPreloader";
 import FollowCursorEffect from "@/effects/FollowCursorEffect";
 import GlobeModel from "@/models/GlobeModel/GlobeModel";
 import OscarModel from "@/models/OscarModel/OscarModel";
-import { Environment, Stats } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
 import { Suspense, useCallback, useState } from "react";
@@ -19,18 +19,18 @@ export default function App2() {
 
   return (
     <div className="canvasContainer">
-      {/*-- Fallback, показывает прелоадер пока не загрузилась моделька --*/}
-      <Suspense fallback={<CanvasPreloader />}>
-        <Canvas
-          shadows
-          dpr={[1, 2]}
-          camera={{ fov: 40 }}
-          gl={{
-            alpha: true,
-            powerPreference: 'high-performance',
-            antialias: true,
-          }}
-        >
+      <Canvas
+        shadows
+        dpr={[1, 2]}
+        camera={{ fov: 40 }}
+        gl={{
+          alpha: true,
+          powerPreference: 'high-performance',
+          antialias: true,
+        }}
+      >
+        {/*-- Fallback, показывает прелоадер пока не загрузилась моделька --*/}
+        <Suspense fallback={<CanvasPreloader />}>
           <OscarModel />
           <GlobeModel />
           <Environment files="./environment/studio.hdr" />
@@ -39,8 +39,8 @@ export default function App2() {
           <color attach='background' args={[color]} />
           {/*-- Опционально рендерим компонент с эффектом --*/}
           {isFollow && <FollowCursorEffect />}
-        </Canvas>
-      </Suspense>
+        </Suspense>
+      </Canvas>
       <div className="navigation">
         <button
           onClick={handleFollowToggle}

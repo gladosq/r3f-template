@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { useControls } from "leva";
 import { Suspense } from "react";
 
-export default function App4() {
+export default function App5() {
   /*-- [0, Math.PI / 2, 0] -> поворот вокруг оси Y на 90 градусов --*/
   const { position, rotation, rotationIntensity, floatIntensity, speed } = useControls({
     position: {
@@ -39,17 +39,17 @@ export default function App4() {
 
   return (
     <div className="canvasContainer">
-      <Suspense>
-        <Canvas
-          shadows
-          dpr={[1, 2]}
-          camera={{ near: 0.025 }}
-          gl={{
-            alpha: true,
-            powerPreference: 'high-performance',
-            antialias: true,
-          }}
-        >
+      <Canvas
+        shadows
+        dpr={[1, 2]}
+        camera={{ near: 0.025 }}
+        gl={{
+          alpha: true,
+          powerPreference: 'high-performance',
+          antialias: true,
+        }}
+      >
+        <Suspense>
           <OrbitControls />
           <Environment files="./environment/apartment.hdr" />
 
@@ -63,8 +63,8 @@ export default function App4() {
             <LemonModel />
 
           </Float>
-        </Canvas>
-      </Suspense>
+        </Suspense>
+      </Canvas>
     </div>
   );
 }

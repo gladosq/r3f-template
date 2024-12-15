@@ -9,35 +9,35 @@ import * as THREE from "three";
 export default function App1() {
   return (
     <div className="canvasContainer">
-      <Suspense fallback={null}>
-        <Canvas
-          shadows
-          dpr={[1, 2]}
-          camera={{ fov: 40 }}
-          gl={{
-            /*-- Делаем прозрачный фон --*/
-            alpha: true,
-            powerPreference: 'high-performance',
-            /*-- Сглаживает края объектов и улучшает визуальное качество --*/
-            antialias: true,
-          }}
-        >
+      <Canvas
+        shadows
+        dpr={[1, 2]}
+        camera={{ fov: 40 }}
+        gl={{
+          /*-- Делаем прозрачный фон --*/
+          alpha: true,
+          powerPreference: 'high-performance',
+          /*-- Сглаживает края объектов и улучшает визуальное качество --*/
+          antialias: true,
+        }}
+      >
+        <Suspense fallback={null}>
           {/*-- Orbit Controls для просмотра модели, дебага --*/}
           <OrbitControls
             enableZoom={true}
             enableRotate={true}
             /*-- Автоматическое вращение камеры вокруг объекта. Например, для анимации --*/
             autoRotate={false}
-            /*-- Ограничить угол вращения камеры --*/
-            // minPolarAngle={Math.PI / 2}
-            // maxPolarAngle={Math.PI / 2}
+          /*-- Ограничить угол вращения камеры --*/
+          // minPolarAngle={Math.PI / 2}
+          // maxPolarAngle={Math.PI / 2}
           />
           <OscarModel />
           {/*-- Встроенные пресеты environment из @react-three/drei, 
           падают с ошибкой cdn (можно выкачать через VPN) --*/}
           <Environment files="./environment/studio.hdr" />
-        </Canvas>
-      </Suspense>
-    </div>
+        </Suspense>
+      </Canvas>
+    </div >
   );
 }
