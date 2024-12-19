@@ -1,3 +1,6 @@
+### Деплой — https://r3f-template-rust.vercel.app
+
+### Структура
 - `/app-1` - Environments, CanvasSettings, OrbitControls, alpha, useGLTF, group, hard models
 - `/app-2` - Preloader, Html, State work, useFrame, easy models
 - `/app-3` - Helpers, reusable component, Environment background, leva, diff scale
@@ -9,8 +12,7 @@
 - `/app-9` - Lights
 - `/app-10` - Effects: glitch, rotate control, rotation animation, pulsing animation
 
-Деплой: https://r3f-template-rust.vercel.app/
-
+### Запуск
 Запуск dev-приложения:
 ```bash
 # Установить зависимости
