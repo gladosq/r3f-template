@@ -9,6 +9,8 @@
 - `/app-9` - Lights
 - `/app-10` - Effects: glitch, rotate control, rotation animation, pulsing animation
 
+Деплой: https://r3f-template-rust.vercel.app/
+
 Запуск dev-приложения:
 ```bash
 # Установить зависимости
