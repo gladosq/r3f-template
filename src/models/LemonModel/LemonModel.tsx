@@ -6,7 +6,7 @@ export default function LemonModel() {
   return (
     <group
       position={[0, 0, 0]}
-      scale={1.25}
+      scale={0.5}
       /*-- Поворот на 90 градусов вокруг оси Y --*/
       rotation={[0, Math.PI / 2, 0]}
     >

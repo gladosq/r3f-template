@@ -51,7 +51,7 @@ export default function App5() {
       >
         <Suspense>
           <OrbitControls />
-          <Environment files="./environment/apartment.hdr" />
+          <Environment files="/environment/apartment.hdr" />
 
           <Float
             position={position}
@@ -61,7 +61,6 @@ export default function App5() {
             speed={speed}
           >
             <LemonModel />
-
           </Float>
         </Suspense>
       </Canvas>

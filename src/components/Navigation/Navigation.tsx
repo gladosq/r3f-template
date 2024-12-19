@@ -16,9 +16,9 @@ export default function Navigation() {
       <Link className={clsx(s.link, pathname === '/app-3' && s.link_active)} href={'/app-3'}>/app-3</Link>
       <Link className={clsx(s.link, pathname === '/app-4' && s.link_active)} href={'/app-4'}>/app-4</Link>
       <Link className={clsx(s.link, pathname === '/app-5' && s.link_active)} href={'/app-5'}>/app-5</Link>
-      <Link className={clsx(s.link, pathname === '/app-6' && s.link_active)} href={'/app-6'}>/app-6</Link>
+      <a className={clsx(s.link, pathname === '/app-6' && s.link_active)} href={'/app-6'}>/app-6</a>
       <Link className={clsx(s.link, pathname === '/app-7' && s.link_active)} href={'/app-7'}>/app-7</Link>
-      <Link className={clsx(s.link, pathname === '/app-8' && s.link_active)} href={'/app-8'}>/app-8</Link>
+      <a className={clsx(s.link, pathname === '/app-8' && s.link_active)} href={'/app-8'}>/app-8</a>
       <Link className={clsx(s.link, pathname === '/app-9' && s.link_active)} href={'/app-9'}>/app-9</Link>
       <Link className={clsx(s.link, pathname === '/app-10' && s.link_active)} href={'/app-10'}>/app-10</Link>
       {pathname === '/app-1' && <div className={s.title}>Environments, CanvasSettings, OrbitControls, alpha, useGLTF, group, hard models</div>}
