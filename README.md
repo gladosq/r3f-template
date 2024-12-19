@@ -1,8 +1,8 @@
 ### Деплой — https://r3f-template-rust.vercel.app
 
 ### Структура
-- `/app-1` - Environments, CanvasSettings, OrbitControls, alpha, useGLTF, group, hard models
-- `/app-2` - Preloader, Html, State work, useFrame, easy models
+- `/app-1` - Environments, CanvasSettings, OrbitControls, alpha, useGLTF, group
+- `/app-2` - Preloader, Html, State work, useFrame, cursor parallax
 - `/app-3` - Helpers, reusable component, Environment background, leva, diff scale
 - `/app-4` - Animations, time control, backgroundBlurriness
 - `/app-5` - Math.PI, FLoat
