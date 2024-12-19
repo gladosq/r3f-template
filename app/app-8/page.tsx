@@ -11,6 +11,7 @@ function Model({ url }: { url: string }) {
   const modelRef = useRef<THREE.Mesh>(null!);
 
   const { scene, materials } = useGLTF(url);
+  const pipee = useGLTF(url);
   const [scale, setScale] = useState(0.05);
   const [isTransparent, setIsTransparent] = useState(false);
 
@@ -62,7 +63,7 @@ function Model({ url }: { url: string }) {
   );
 }
 
-export default function App7() {
+export default function App8() {
   return (
     <div className="canvasContainer">
       <Canvas

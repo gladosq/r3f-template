@@ -35,7 +35,7 @@ export default function App1() {
           <OscarModel />
           {/*-- Встроенные пресеты environment из @react-three/drei, 
           падают с ошибкой cdn (можно выкачать через VPN) --*/}
-          <Environment files="./environment/studio.hdr" />
+          <Environment files="./environment/sunset.hdr"/>
         </Suspense>
       </Canvas>
     </div >

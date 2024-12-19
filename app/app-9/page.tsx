@@ -1,6 +1,6 @@
 'use client';
 
-import { useGLTF, OrbitControls } from "@react-three/drei";
+import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useControls } from "leva";
 import { Suspense } from "react";
@@ -10,14 +10,14 @@ function Model({ url }: { url: string }) {
   return <primitive object={scene} scale={1} />
 }
 
-export default function App7() {
+export default function App9() {
   const { lightType, intensity, color, position } = useControls({
     lightType: {
       value: 'PointLight',
       options: ['PointLight', 'SpotLight', 'DirectionalLight', 'HemisphereLight'],
     },
     intensity: {
-      value: 300,
+      value: 100,
       min: 0,
       max: 2000,
     },
@@ -65,7 +65,7 @@ export default function App7() {
       <Canvas
         shadows
         dpr={[1, 2]}
-        camera={{ near: 0.025, fov: 50 }}
+        camera={{position: [-2, 4, 4], near: 0.025, fov: 50 }}
         gl={{
           alpha: true,
           powerPreference: 'high-performance',

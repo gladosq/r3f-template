@@ -6,11 +6,10 @@ export default function LemonModel() {
   return (
     <group
       position={[0, 0, 0]}
-      scale={0.25}
+      scale={1.25}
       /*-- Поворот на 90 градусов вокруг оси Y --*/
       rotation={[0, Math.PI / 2, 0]}
     >
-      <object3D position={[0, 0, 0]} />
       <primitive object={scene} />
     </group>
   );

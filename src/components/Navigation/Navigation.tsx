@@ -20,6 +20,7 @@ export default function Navigation() {
       <Link className={clsx(s.link, pathname === '/app-7' && s.link_active)} href={'/app-7'}>/app-7</Link>
       <Link className={clsx(s.link, pathname === '/app-8' && s.link_active)} href={'/app-8'}>/app-8</Link>
       <Link className={clsx(s.link, pathname === '/app-9' && s.link_active)} href={'/app-9'}>/app-9</Link>
+      <Link className={clsx(s.link, pathname === '/app-10' && s.link_active)} href={'/app-10'}>/app-10</Link>
       {pathname === '/app-1' && <div className={s.title}>Environments, CanvasSettings, OrbitControls, alpha, useGLTF, group, hard models</div>}
       {pathname === '/app-2' && <div className={s.title}>Preloader, Html, State work, useFrame, easy models</div>}
       {pathname === '/app-3' && <div className={s.title}>Helpers, reusable component, Environment background, leva, diff scale</div>}
@@ -29,6 +30,7 @@ export default function Navigation() {
       {pathname === '/app-7' && <div className={s.title}>draggable, color, collection models, position control</div>}
       {pathname === '/app-8' && <div className={s.title}>interactive with model, few materials models opacity, ref</div>}
       {pathname === '/app-9' && <div className={s.title}>Lights</div>}
+      {pathname === '/app-10' && <div className={s.title}>Effects: glitch, rotate control, rotation animation, pulsing animation</div>}
     </nav>
   );
 }

@@ -3,7 +3,8 @@ import {useGLTF} from '@react-three/drei';
 export default function OscarModel() {
   /*-- Лоадер для модели (статика), вытаскиваем ноды и материал --*/
   const {nodes, materials} = useGLTF('/models/oscar-compressed.glb');
-
+  const scene = useGLTF('/models/oscar-compressed.glb');
+  
   /*-- Если есть готовая сцена, вытаскиваем сцену.
   Если сцены нет, вытаскиваем по отдельности нужный нам mesh, 
   material и геометрию, если нужна --*/

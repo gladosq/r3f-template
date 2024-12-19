@@ -15,7 +15,6 @@
   color: rgba(255, 255, 255, 0.7);
   position: relative;
   cursor: pointer;
-  width: max-content;
 
   &:hover {
     box-shadow: 0 0 14px -4px #C7F9FF70;
@@ -36,7 +35,7 @@
 
 .title {
   position: absolute;
-  left: 148px;
+  left: 158px;
   bottom: 2%;
   z-index: 1;
   border-radius: 4px;

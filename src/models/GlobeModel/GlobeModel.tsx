@@ -10,7 +10,6 @@ export default function GlobeModel() {
       scale={0.1}
       rotation={[0, Math.PI / 2, 0]}
     >
-      <object3D position={[0, 0, 0]} />
       <primitive object={scene} />
     </group>
   );
