@@ -10,7 +10,7 @@
 - `/app-7` - draggable, color, collection models, position control
 - `/app-8` - interactive with model, few materials models opacity, ref
 - `/app-9` - Lights
-- `/app-10` - Effects: glitch, rotate control, rotation animation, pulsing animation
+- `/app-10` - Effects: glitch, rotate control, rotation animation, pulsing animation, ascii render
 
 ### Запуск
 Запуск dev-приложения:

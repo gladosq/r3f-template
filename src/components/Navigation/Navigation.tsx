@@ -30,7 +30,7 @@ export default function Navigation() {
       {pathname === '/app-7' && <div className={s.title}>draggable, color, collection models, position control</div>}
       {pathname === '/app-8' && <div className={s.title}>interactive with model, few materials models opacity, ref</div>}
       {pathname === '/app-9' && <div className={s.title}>Lights</div>}
-      {pathname === '/app-10' && <div className={s.title}>Effects: glitch, rotate control, rotation animation, pulsing animation</div>}
+      {pathname === '/app-10' && <div className={s.title}>Effects: glitch, rotate control, rotation animation, pulsing animation, ascii render</div>}
     </nav>
   );
 }
