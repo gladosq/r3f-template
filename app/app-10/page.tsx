@@ -1,11 +1,11 @@
 'use client';
 
-import { useGLTF, OrbitControls, Environment } from "@react-three/drei";
+import { useGLTF, OrbitControls, Environment, AsciiRenderer } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { EffectComposer, Glitch } from "@react-three/postprocessing";
 import { useControls } from "leva";
 import { GlitchMode } from "postprocessing";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Group, Vector2 } from 'three';
 
 function Model({ effect, url, rotateMode, rotate, pulsing = false }:
@@ -70,23 +70,26 @@ export default function App10() {
     rotationY,
     rotationZ,
     rotationAxis,
-    pulsing } = useControls({
-      effect: {
-        value: 'glitch',
-        options: ['glitch', 'rotate control', 'rotation animation', 'pulsing animation'],
-      },
-      vectorDelayX: { value: 4.5, min: 0, max: 20, step: 1, render: (get) => get('effect') === 'glitch' },
-      vectorDelayY: { value: 2.5, min: 0, max: 20, step: 1, render: (get) => get('effect') === 'glitch' },
-      vectorDurationX: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
-      vectorDurationY: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
-      vectorStrengthX: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
-      vectorStrengthY: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
-      rotationX: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, render: (get) => get('effect') === 'rotate control' },
-      rotationY: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, render: (get) => get('effect') === 'rotate control' },
-      rotationZ: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, render: (get) => get('effect') === 'rotate control' },
-      rotationAxis: { value: 'y', options: ['x', 'y', 'z'], render: (get) => get('effect') === 'rotation animation' },
-      pulsing: { value: true, render: (get) => get('effect') === 'pulsing animation' },
-    });
+    redColor,
+    pulsing
+  } = useControls({
+    effect: {
+      value: 'glitch',
+      options: ['glitch', 'rotate control', 'rotation animation', 'pulsing animation', 'ASCII renderer'],
+    },
+    vectorDelayX: { value: 4.5, min: 0, max: 20, step: 1, render: (get) => get('effect') === 'glitch' },
+    vectorDelayY: { value: 2.5, min: 0, max: 20, step: 1, render: (get) => get('effect') === 'glitch' },
+    vectorDurationX: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
+    vectorDurationY: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
+    vectorStrengthX: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
+    vectorStrengthY: { value: 0.5, min: 0, max: 1, step: 0.01, render: (get) => get('effect') === 'glitch' },
+    rotationX: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, render: (get) => get('effect') === 'rotate control' },
+    rotationY: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, render: (get) => get('effect') === 'rotate control' },
+    rotationZ: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, render: (get) => get('effect') === 'rotate control' },
+    rotationAxis: { value: 'y', options: ['x', 'y', 'z'], render: (get) => get('effect') === 'rotation animation' },
+    pulsing: { value: true, render: (get) => get('effect') === 'pulsing animation' },
+    redColor: { value: false, label: 'Красный цвет', render: (get) => get('effect') === 'ASCII renderer' },
+  });
 
   const vectorDelay = new Vector2(vectorDelayX, vectorDelayY);
   const vectorDuration = new Vector2(vectorDurationX, vectorDurationY);
@@ -99,11 +102,9 @@ export default function App10() {
         dpr={[1, 2]}
         camera={{ position: [-1, 3, 6], near: 0.025, fov: 20 }}
         gl={{
-          alpha: true,
+          alpha: false,
           powerPreference: 'high-performance',
           antialias: true,
-          stencil: true,
-          depth: true
         }}
       >
         <Suspense>
@@ -134,6 +135,9 @@ export default function App10() {
               pulsing={pulsing}
             />
 
+            {(effect === 'ASCII renderer') ? (
+              <AsciiRenderer renderIndex={100} fgColor={redColor ? 'red' : 'white'} bgColor={'transparent'} />
+            ) : <></>}
           </EffectComposer>
         </Suspense>
       </Canvas>
