@@ -1,4 +1,4 @@
-### Деплой — https://r3f-template-rust.vercel.app
+### Деплой — https://r3f-template-gladosq.vercel.app
 
 ### Структура
 - `/app-1` - Environments, CanvasSettings, OrbitControls, alpha, useGLTF, group
