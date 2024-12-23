@@ -38,7 +38,7 @@ function Model({ url }: { url: string }) {
 
   useMemo(() => {
     scene.traverse((child) => {
-      if ((child as THREE.Mesh).isMesh) {
+      if (child instanceof THREE.Mesh) {
         const mesh = child as THREE.Mesh;
         if (mesh.material && 'opacity' in mesh.material) {
           mesh.material.opacity = isTransparent ? 0.1 : 1.0;

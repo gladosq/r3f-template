@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { EffectComposer, Glitch } from "@react-three/postprocessing";
 import { useControls } from "leva";
 import { GlitchMode } from "postprocessing";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import { Group, Vector2 } from 'three';
 
 function Model({ effect, url, rotateMode, rotate, pulsing = false }:

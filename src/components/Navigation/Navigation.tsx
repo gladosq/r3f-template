@@ -21,8 +21,11 @@ export default function Navigation() {
       <a className={clsx(s.link, pathname === '/app-8' && s.link_active)} href={'/app-8'}>/app-8</a>
       <Link className={clsx(s.link, pathname === '/app-9' && s.link_active)} href={'/app-9'}>/app-9</Link>
       <Link className={clsx(s.link, pathname === '/app-10' && s.link_active)} href={'/app-10'}>/app-10</Link>
+      <Link className={clsx(s.link, pathname === '/app-11' && s.link_active)} href={'/app-11'}>/app-11</Link>
+      <Link className={clsx(s.link, pathname === '/app-12' && s.link_active)} href={'/app-12'}>/app-12</Link>
+      <Link className={clsx(s.link, pathname === '/app-13' && s.link_active)} href={'/app-13'}>/app-13</Link>
       {pathname === '/app-1' && <div className={s.title}>Environments, CanvasSettings, OrbitControls, alpha, useGLTF, group</div>}
-      {pathname === '/app-2' && <div className={s.title}>Preloader, Html, State work, useFrame, cursor parallax</div>}
+      {pathname === '/app-2' && <div className={s.title}>Preloader, Html, State work, useFrame, Parallax (cursor)</div>}
       {pathname === '/app-3' && <div className={s.title}>Helpers, reusable component, Environment background, leva, diff scale</div>}
       {pathname === '/app-4' && <div className={s.title}>Animations, time control, backgroundBlurriness</div>}
       {pathname === '/app-5' && <div className={s.title}>Math.PI, FLoat</div>}
@@ -31,6 +34,9 @@ export default function Navigation() {
       {pathname === '/app-8' && <div className={s.title}>interactive with model, few materials models opacity, ref</div>}
       {pathname === '/app-9' && <div className={s.title}>Lights</div>}
       {pathname === '/app-10' && <div className={s.title}>Effects: glitch, rotate control, rotation animation, pulsing animation, ascii render</div>}
+      {pathname === '/app-11' && <div className={s.title}>Color animations, Infinite animations function</div>}
+      {pathname === '/app-12' && <div className={s.title}>Parallax (scroll)</div>}
+      {pathname === '/app-13' && <div className={s.title}>Scroll animations observer</div>}
     </nav>
   );
 }

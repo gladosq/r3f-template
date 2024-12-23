@@ -20,6 +20,19 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(195, 197, 206, 0.4);
+    border-radius: 6px;
+  }
 }
 
 body, html {
@@ -40,6 +53,9 @@ body, html {
   margin: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
+  /* max-height: 100vh; */
+  /* overflow-y: auto; */
+  /* box-sizing: border-box; */
 }
 
 .canvasContainer {
