@@ -11,6 +11,9 @@
 - `/app-8` - interactive with model, few materials models opacity, ref
 - `/app-9` - Lights
 - `/app-10` - Effects: glitch, rotate control, rotation animation, pulsing animation, ascii render
+- `/app-11` - Color animations, Infinite animations function
+- `/app-12` - Parallax (scroll)
+- `/app-13` - Scroll animations observer
 
 ### Проблемы с Next 15
 
